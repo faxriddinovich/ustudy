@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Hospital Details</h1>
+                <table class="table table-striped hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Established year
+                        </th>
+                        <th>
+                            Actions
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            {{ hospital.name }}
+                        </td>
+                        <td>
+                            {{ hospital.address }}
+                        </td>
+                        <td>
+                            {{ hospital.established_year }}
+                        </td>
+                        <td>
+                            <div class="\">
+                                <a href="{% url 'hospital_update' hospital.id %}" class="btn btn-outline-warning">Update</a>
+                                <a href="{% url 'hospital_delete' hospital.id %}" class="ml-2 btn btn-outline-danger">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

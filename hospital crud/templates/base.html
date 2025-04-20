@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital | CRUD</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+<header>
+    <nav class="navbar bg-primary">
+        <div class="container">
+            <a class="navbar-brand text-light">Navbar</a>
+            <div class="links d-flex justify-content-end gap-2">
+                <a class="text-light text-decoration-none" href="{% url 'home' %}">Home</a>
+                <a class="text-light text-decoration-none" href="{% url 'hospitals' %}">Hospitals</a>
+                <a class="text-light text-decoration-none" href="{% url 'doctors' %}">Doctors</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="my-3">
+    {% block content %}
+    {% endblock %}
+</main>
+</body>
+</html>

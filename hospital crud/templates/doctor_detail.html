@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">Doctor details</h2>
+                <table class="table table-striped hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Full name</th>
+                        <th>Speciality</th>
+                        <th>Hospital</th>
+                        <th>Experience</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ doctor.full_name }}</td>
+                        <td>{{ doctor.specialty }}</td>
+                        <td>{{ doctor.hospital }}</td>
+                        <td>{{ doctor.experience_years }}</td>
+                        <td>
+                            <div class="d-flex items-center gap-2">
+                                <a href="{% url 'doctor_update' doctor.id %}" class="btn btn-outline-warning">Update</a>
+                                <a href="{% url 'doctor_delete' doctor.id %}" class="btn btn-danger ml-2">Delete</a>
+                            </div>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">
+                    Doctors
+                </h2>
+                <ul class="list-group">
+                    {% for doctor in doctors_list %}
+                        <li class="list-group-item">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>{{ doctor.full_name }}</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p>Speacialty: {{ doctor.specialty }}</p>
+                                    <p>Hospital: {{ doctor.hospital }}</p>
+                                    <p>Experience: {{ doctor.experience_years }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="{% url 'doctor_detail' doctor.id %}" class="btn btn-outline-success">View</a>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            <a href="{% url 'doctor_create' %}" class="btn btn-outline-info my-2">Add Doctor</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

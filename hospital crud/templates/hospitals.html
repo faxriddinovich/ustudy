@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Hospitals</h1>
+                <ul class="list-group mb-3">
+                    {% for hospital in hospital_list %}
+                        <li class="list-group-item">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>{{ hospital.name }}</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>{{ hospital.address }}</p>
+                                <i>{{ hospital.established_year }}</i>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{% url 'hospital_detail' hospital.id %}" class="btn btn-outline-success">View</a>
+                            </div>
+                        </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'hospital_create' %}" class="btn btn-outline-info my-2">Add Hospital</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
