@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Students
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Vestibulum luctus id nulla sit amet dapibus. Donec augue libero, lobortis quis mauris at,
+                            euismod tincidunt quam. Vestibulum congue, justo a cursus vestibulum, mauris leo hendrerit
+                            ligula, vel elementum justo leo non velit. Mauris sed eros tempor, scelerisque magna ac,
+                            accumsan quam. Maecenas eget orci non arcu finibus consectetur nec non diam. Fusce pretium
+                            urna a sagittis pretium. Ut semper ante sed tempus pellentesque. Proin ac tristique sapien,
+                            sit amet vehicula dui. Maecenas tincidunt finibus lectus, quis iaculis lectus gravida a.
+                            Praesent nisl purus, dictum id varius sit amet, dignissim ut lacus. Nunc vel dolor et libero
+                            rutrum mattis. Sed imperdiet massa ut magna varius, vitae cursus justo sagittis.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'students' %}" class="text-dark text-decoration-none">Students</a> |
+                        <a href="#" class="text-dark text-decoration-none">Courses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students | CRUD</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+<header>
+    <nav class="navbar bg-primary">
+        <div class="container">
+            <a class="navbar-brand text-light">Navbar</a>
+            <div>
+                <a href="{% url 'students' %}" class="text-light">Students</a>
+                <a href="{% url 'courses' %}" class="text-light">Courses</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<main class="my-3">
+    {% block content %}
+    {% endblock %}
+</main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">
+                    Students
+                </h2>
+                <table class="table table-bordered table-striped hover">
+                    <thead>
+                    <tr>
+                        <th>Num</th>
+                        <th>Student full name</th>
+                        <th>Student email</th>
+                        <th>Student age</th>
+                        <th>Course</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for student in students %}
+                        <tr>
+                        <td>{{ student.id }}</td>
+                            <td>{{ student.full_name }}</td>
+                            <td>{{ student.email }}</td>
+                            <td>{{ student.age }}</td>
+                            <td>{{ student.course }}</td>
+                        <td>
+                            <a href="{% url 'student_details' student.id %}" class="btn btn-outline-primary">View</a>
+                        </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'create_student' %}" class="btn btn-primary">Add student</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
