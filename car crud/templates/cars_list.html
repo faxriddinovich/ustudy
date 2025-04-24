@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">Cars</h2>
+                <table class="table table-bordered table-striped hover">
+                    <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Price</th>
+                        <th>Details</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for car in car_list %}
+                        <tr>
+                            <td>{{ car.brand }}</td>
+                            <td>{{ car.model }}</td>
+                            <td>{{ car.year }}</td>
+                            <td>{{ car.price }}</td>
+                        <td>
+                            <a href="{% url 'car_detail' car.pk %}" class="btn btn-primary">View</a>
+                        </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'car_create' %}" class="btn btn-primary">Add car</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
